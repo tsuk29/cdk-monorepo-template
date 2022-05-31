@@ -1,0 +1,37 @@
+{
+  "name": "cdk-monorepo-sample",
+  "version": "0.1.0",
+  "bin": {
+    "cdk-monorepo-sample": "bin/cdk-monorepo-sample.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.97",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.5.0",
+    "@types/node": "10.17.27",
+    "@types/prettier": "2.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "aws-cdk": "2.25.0",
+    "esbuild": "^0.14.42",
+    "eslint": "^8.16.0",
+    "jest": "^27.5.1",
+    "prettier": "2.6.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-solutions-constructs/aws-cloudfront-s3": "^2.8.0",
+    "aws-cdk-lib": "2.25.0",
+    "constructs": "^10.0.0",
+    "fs-extra": "^10.1.0",
+    "source-map-support": "^0.5.21"
+  }
+}
