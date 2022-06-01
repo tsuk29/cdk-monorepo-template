@@ -12,7 +12,7 @@ class API {
   ): Promise<types.API['Greeting']['Response']> {
     const query = new URLSearchParams();
     query.set('message', props.message);
-    const res = await fetch(`${this.#urlBase}/messages?${query}`, {
+    const res = await fetch(`${this.#urlBase}/greeting?${query}`, {
       mode: 'cors',
     });
     return await res.json();
