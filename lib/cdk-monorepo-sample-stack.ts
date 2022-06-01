@@ -6,6 +6,7 @@ import {
   aws_s3_deployment,
   BundlingOutput,
   DockerImage,
+  CfnOutput,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { CloudFrontToS3 } from '@aws-solutions-constructs/aws-cloudfront-s3';
@@ -38,7 +39,10 @@ export class CdkMonorepoSampleStack extends Stack {
     const greetingResources = restApi.root.addResource('greeting');
     greetingResources.addMethod(
       'GET',
-      new aws_apigateway.LambdaIntegration(greetingHandler)
+      new aws_apigateway.LambdaIntegration(greetingHandler),
+      {
+        authorizationType: aws_apigateway.AuthorizationType.NONE,
+      }
     );
 
     /**
@@ -89,6 +93,10 @@ export class CdkMonorepoSampleStack extends Stack {
         ),
       ],
       memoryLimit: 2048,
+    });
+
+    new CfnOutput(this, 'DistributionDomainName', {
+      value: cloudFrontWebDistribution.distributionDomainName,
     });
   }
 }

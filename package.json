@@ -6,6 +6,9 @@
   },
   "scripts": {
     "build": "tsc",
+    "web:install": "npm install --prefix sources/frontend",
+    "web:build": "npm run build --prefix sources/frontend",
+    "web:bundling": "run-s web:install web:build",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
@@ -22,6 +25,7 @@
     "esbuild": "^0.14.42",
     "eslint": "^8.16.0",
     "jest": "^27.5.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.6.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",

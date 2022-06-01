@@ -19,10 +19,18 @@ const wrap =
       .then((res) => ({
         statusCode: 200,
         body: JSON.stringify(res),
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
       }))
       .catch((e) => ({
         statusCode: 400,
         body: JSON.stringify(e),
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
       }));
 
 export default wrap;
